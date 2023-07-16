@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="maxcontainer">
+  <div class="container">
+    <div class="row">
+      <h1>Contactanos</h1>
+    </div>
+    <form  [formGroup]="contactoForm" class="row input-container">
+      <div class="col-xs-12">
+        <div class="styled-input wide">
+          <label><input formControlName="Nombre"  type="text" required />
+          Nombre:</label>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="styled-input">
+          <label>
+          <input formControlName="Correo" type="text" required />
+          Correo electronico:</label>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="styled-input" style="float:right;">
+          <label>
+          <input formControlName="Numero" type="text" required />
+         Numero de telefono:</label>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="styled-input wide">
+          <label>
+          <textarea formControlName="Mensaje" required></textarea>
+          Mensaje:</label>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <button (click)="onSubmit()" class="btn-lrg submit-btn">Enviar mensaje</button>
+      </div>
+    </form>
+  </div>

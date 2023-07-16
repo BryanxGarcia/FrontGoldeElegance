@@ -1,1 +1,39 @@
-<p>ficha-producto works!</p>
+<app-nadvar-user></app-nadvar-user>
+<div class="container">
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url({{Producto.imagen}})"></div>
+    </div>
+    <div class="description">
+
+      <h1>{{Producto.nombreProducto}}</h1>
+      <h2>${{Producto.precioVenta}}</h2>
+      <p> {{Producto.descripcion}}</p>
+
+      <div class="botones">
+        <div class="espacio-botones">
+          <p-button icon="pi pi-shopping-cart" label="Comprar ahora" styleClass="p-button-outlined p-button-success">
+          </p-button>
+          <p-button icon="pi pi-cart-plus" label="Agregar al carrito" styleClass="p-button-outlined p-button-warning">
+          </p-button>
+        </div>
+
+        <div class="boton-favorito">
+
+          <p-button *ngIf="!checkFavorito" icon="pi pi-heart" label="Agregar a favoritos"
+            styleClass="p-button-outlined p-button-danger" (click)="addFavorito()">
+          </p-button>
+
+          <p-button *ngIf="checkFavorito" icon="pi pi-heart-fill" label="Quitar de Favoritos"
+            styleClass="p-button-outlined p-button-danger" (click)="eliminarFavorito()">
+          </p-button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- (click)="addCarrito(product.pkProducto)" -->
