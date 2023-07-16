@@ -4,9 +4,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "Prod" ]
+    branches: [ "Prod", "Dev" ]
   pull_request:
-    branches: [ "Prod" ]
+    branches: [ "Prod", "Dev" ]
 
 jobs:
   build:
@@ -27,8 +27,7 @@ jobs:
           
       - run: npm install
       - run: npm ci
-      - run: npm run build --if-present
       - run: npm test -- --watch=false --browsers=ChromeHeadless
-      - name: Lint
-        run: |
-          npm run lint
+      - run: npm run lint
+      - run: npm run build --if-present
+   
