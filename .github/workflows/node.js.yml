@@ -1,5 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
 name: Node.js CI
 
 on:
@@ -7,6 +8,7 @@ on:
     branches: [ "Prod", "Dev" ]
   pull_request:
     branches: [ "Prod", "Dev" ]
+
 
 jobs:
   build:
@@ -30,4 +32,3 @@ jobs:
       - run: npm test -- --watch=false --browsers=ChromeHeadless
       - run: npm run lint
       - run: npm run build --if-present
-   
