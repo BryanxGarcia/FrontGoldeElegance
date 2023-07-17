@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HistorialComponent implements OnInit{
 
-  constructor(private historialS: HistorialService, private userService: AuthService) { }
+  constructor(public historialS: HistorialService, private userService: AuthService) { }
 
   Historial: IHistorial[] = [];
   usuario = "";

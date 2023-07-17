@@ -24,4 +24,11 @@ describe('HistorialComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+      // Tests that 'listarHistorialPorUsuario' method of HistorialService is called with correct argument
+      it('test_happy_path_listarHistorialPorUsuario_called_with_correct_argument', () => {
+        spyOn(component.historialS, 'listarHistorialPorUsuario').and.callThrough();
+        component.obtenerProductos();
+        expect(component.historialS.listarHistorialPorUsuario).toHaveBeenCalledWith(component.usuario);
+    });
+    
 });
