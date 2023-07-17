@@ -28,7 +28,10 @@ jobs:
 
       - name: Build
         run: npm run build --if-present
-
+        
+      - name: Replace base href
+        run: node replace-base-href.js
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
